@@ -1,0 +1,266 @@
+{
+  "breadcrumb": "TRUST / Data Governance / Table Management",
+  "modes": {
+    "standard": "Standard",
+    "ddl": "DDL"
+  },
+  "modeHint": {
+    "standard": "Fill in the name, descriptions and governance labels; warehouse rules are validated live and the DDL is generated for you",
+    "ddl": "Paste a CREATE TABLE statement; the structure is parsed and moved into Standard mode to complete governance metadata"
+  },
+  "actions": {
+    "reset": "Reset",
+    "addColumn": "Add column",
+    "removeColumn": "Remove column",
+    "suggestSecurity": "Suggest security tiers from names",
+    "copy": "Copy",
+    "copied": "Copied",
+    "submit": "Submit table",
+    "again": "Create another table"
+  },
+  "sections": {
+    "basic": {
+      "title": "Name & description",
+      "desc": "The table name follows the warehouse convention: layer_domain_subject_period"
+    },
+    "labels": {
+      "title": "Governance labels",
+      "desc": "Asset tier, security tier, owner and business description drive governance and access approval"
+    },
+    "columns": {
+      "title": "Columns",
+      "desc": "Describe every column and tag its security tier; the table tier is set automatically to the highest column tier"
+    }
+  },
+  "fields": {
+    "layer": "Layer",
+    "domain": "Business domain",
+    "subject": "Subject",
+    "period": "Refresh period",
+    "comment": "Table description",
+    "assetLevel": "Asset tier",
+    "securityLevel": "Table security tier",
+    "owner": "Owner",
+    "businessDescription": "Business description"
+  },
+  "placeholders": {
+    "select": "Select",
+    "subject": "e.g. order, user_profile",
+    "comment": "One sentence on content and grain, e.g. Order detail, one row per order",
+    "owner": "e.g. alex.chen@company.com",
+    "businessDescription": "Business background, main use cases, data sources and metric definitions (at least 20 characters)"
+  },
+  "hints": {
+    "subject": "Lowercase letters, digits, underscores; up to 32 characters",
+    "comment": "At least 6 characters",
+    "businessDescription": "{{count}} / 20 characters"
+  },
+  "naming": {
+    "fullName": "Full table name",
+    "rule": "Rule: {layer}_{domain}_{subject}_{period}. Lowercase letters, digits and underscores only; 64 characters max.",
+    "tooLong": "Table name exceeds 64 characters",
+    "invalid": "Lowercase letters, digits and underscores only, starting with a letter"
+  },
+  "layers": {
+    "ods": "Raw",
+    "dwd": "Detail",
+    "dws": "Summary",
+    "ads": "Application",
+    "dim": "Dimension"
+  },
+  "domains": {
+    "commerce": "Commerce",
+    "customer": "Customer",
+    "finance": "Finance",
+    "risk": "Risk",
+    "marketing": "Marketing",
+    "supply": "Supply chain"
+  },
+  "periods": {
+    "di": "Daily incremental",
+    "df": "Daily full",
+    "hi": "Hourly incremental",
+    "mi": "Monthly incremental",
+    "rt": "Realtime"
+  },
+  "asset": {
+    "P0": {
+      "name": "Temporary",
+      "desc": "Personal or temporary use, no downstream dependencies"
+    },
+    "P1": {
+      "name": "General",
+      "desc": "Used within a team, few downstream dependencies"
+    },
+    "P2": {
+      "name": "Important",
+      "desc": "Used across teams, feeds important reports or metrics"
+    },
+    "P3": {
+      "name": "Core",
+      "desc": "Core business asset; changes need strict review and it must have an owner and quality monitoring"
+    }
+  },
+  "security": {
+    "L0": {
+      "name": "Public",
+      "desc": "Safe to share company-wide, no sensitive information"
+    },
+    "L1": {
+      "name": "Internal",
+      "desc": "Employees only"
+    },
+    "L2": {
+      "name": "Confidential",
+      "desc": "Sensitive business data or personal information; access needs approval"
+    },
+    "L3": {
+      "name": "Restricted",
+      "desc": "Highly sensitive data (e.g. ID numbers, account details); tightly restricted access"
+    }
+  },
+  "levelHint": {
+    "auto": "Set automatically to the highest column tier — no manual selection needed",
+    "pending": "Appears once columns are tagged with a security tier"
+  },
+  "columns": {
+    "name": "Column",
+    "type": "Type",
+    "comment": "Description",
+    "security": "Security tier",
+    "pk": "PK",
+    "partition": "Partition",
+    "nullable": "Nullable",
+    "empty": "No columns yet",
+    "namePlaceholder": "field_name",
+    "commentPlaceholder": "What this column means",
+    "invalidName": "Invalid name",
+    "duplicateName": "Duplicate name",
+    "suggested": "Filled suggested tiers for {{count}} columns",
+    "noSuggestion": "No columns to suggest for"
+  },
+  "checks": {
+    "title": "Governance checks",
+    "summary": "{{passed}} / {{total}} passed",
+    "allPassed": "All checks passed — ready to submit",
+    "pending": "{{count}} to fix",
+    "items": {
+      "name": "Table name follows the convention",
+      "domain": "Business domain set",
+      "comment": "Table description filled in",
+      "businessDescription": "Business description filled in",
+      "assetLevel": "Asset tier set",
+      "owner": "Owner assigned",
+      "columns": "At least one column",
+      "columnNames": "Column names valid and unique",
+      "columnComments": "Every column has a description",
+      "columnSecurity": "Every column has a security tier"
+    }
+  },
+  "preview": {
+    "title": "DDL preview",
+    "desc": "Generated live from the form, including governance and column security tags"
+  },
+  "submit": {
+    "failed": "{{count}} checks still failing — complete them first",
+    "sandbox": "Sandbox: submitting only creates a request; the DDL is not executed"
+  },
+  "success": {
+    "title": "Table request submitted",
+    "desc": "{{name}} passed every governance check and was submitted as {{id}}. The DDL was not executed in the sandbox.",
+    "view": "View request details",
+    "list": "Back to requests"
+  },
+  "ddl": {
+    "title": "Paste CREATE TABLE SQL",
+    "desc": "Supports Delta / Hive style CREATE TABLE: column types, NOT NULL, COMMENT, PRIMARY KEY, PARTITIONED BY and table COMMENT",
+    "placeholder": "CREATE TABLE dwd.dwd_commerce_order_di (\n  order_id BIGINT COMMENT 'Order ID'\n) ...",
+    "sample": "Load sample",
+    "clear": "Clear",
+    "parse": "Parse & switch to Standard",
+    "errors": {
+      "empty": "Enter a CREATE TABLE statement first",
+      "noCreate": "No CREATE TABLE statement found",
+      "unbalanced": "Parentheses in the column list do not match — check the SQL",
+      "noColumns": "No columns could be parsed"
+    },
+    "warnings": {
+      "nameNormalized": "Original name {{raw}} was mapped to {{name}}",
+      "nameIncomplete": "Original name {{raw}} does not follow the convention — complete layer / domain / subject / period below",
+      "noTableComment": "The SQL has no table COMMENT — add a table description",
+      "missingColumnComments": "{{count}} columns have no COMMENT — add descriptions"
+    },
+    "parsed": {
+      "title": "Parsed {{count}} columns from the DDL",
+      "body": "The structure is imported. Next, complete the asset tier, security tier, business domain, owner and business description.",
+      "dismiss": "Got it"
+    }
+  },
+  "status": {
+    "pending": "Pending",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "created": "Created"
+  },
+  "modeShort": {
+    "standard": "Standard",
+    "ddl": "DDL"
+  },
+  "list": {
+    "create": "New table",
+    "searchPlaceholder": "Search request ID, table, description or requester",
+    "allStatus": "All",
+    "allModes": "All modes",
+    "total": "{{count}} requests",
+    "empty": "No matching table requests",
+    "emptyHint": "Adjust the filters or create a new request",
+    "view": "View details",
+    "columns": {
+      "id": "Request ID",
+      "table": "Table",
+      "mode": "Mode",
+      "domain": "Domain",
+      "levels": "Asset / Security tier",
+      "status": "Status",
+      "creator": "Requester",
+      "createdAt": "Created"
+    }
+  },
+  "create": {
+    "title": "New table request",
+    "breadcrumb": "TRUST / Data Governance / Table Management / New"
+  },
+  "detail": {
+    "back": "Back to list",
+    "notFound": "Table request not found",
+    "notFoundBody": "Request {{id}} does not exist or has been cleared.",
+    "columnCount": "{{count}} columns",
+    "sections": {
+      "summary": "Request info",
+      "columns": "Columns",
+      "progress": "Approval progress",
+      "ddl": "Table DDL"
+    },
+    "fields": {
+      "id": "Request ID",
+      "status": "Status",
+      "mode": "Mode",
+      "creator": "Requester",
+      "createdAt": "Created",
+      "updatedAt": "Last updated",
+      "score": "Governance score",
+      "flags": "Flags"
+    },
+    "progress": {
+      "submitted": "Request submitted",
+      "review": "Approval",
+      "waiting": "Waiting for a reviewer",
+      "approvedBy": "Approved by {{name}}",
+      "rejectedBy": "Rejected by {{name}}",
+      "create": "Table creation",
+      "created": "Table created",
+      "pendingCreate": "Created after approval",
+      "notCreated": "Not created"
+    }
+  }
+}

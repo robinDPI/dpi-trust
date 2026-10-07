@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+
+  /* Surfaces */
+  --color-canvas: #f5f6f9;
+  --color-surface: #ffffff;
+  --color-surface-sunken: #fafbfc;
+
+  /* Borders */
+  --color-border: #e5e7ec;
+  --color-border-strong: #d4d8e0;
+
+  /* Ink (text) scale */
+  --color-ink-900: #0b1220;
+  --color-ink-700: #37404f;
+  --color-ink-600: #4a5363;
+  --color-ink-500: #6b7484;
+  --color-ink-400: #98a1b0;
+
+  /* Brand (primary indigo) */
+  --color-brand-50: #eef1fd;
+  --color-brand-100: #e1e6fb;
+  --color-brand-200: #c3cbf6;
+  --color-brand-300: #9ba8ef;
+  --color-brand-500: #4c5fdb;
+  --color-brand-600: #3c4ecf;
+  --color-brand-700: #2f3ea8;
+  --color-brand-800: #242f7a;
+
+  /* Deep accent (flagship / inverted contexts) */
+  --color-navy-900: #0b1530;
+  --color-navy-700: #16213f;
+
+  /* Status tints */
+  --color-amber-bg: #fff5e6;
+  --color-amber-fg: #b5720a;
+  --color-rose-bg: #fdecec;
+  --color-rose-fg: #c0392b;
+  --color-green-bg: #e8f7f0;
+  --color-green-fg: #15875a;
+
+  /* Category icon tints */
+  --color-tint-blue-bg: #eaf1ff;
+  --color-tint-blue-fg: #2f6fe0;
+  --color-tint-purple-bg: #f1edff;
+  --color-tint-purple-fg: #7c5cfc;
+  --color-tint-cyan-bg: #e6f7fb;
+  --color-tint-cyan-fg: #0e92b4;
+  --color-tint-amber-bg: #fff6e7;
+  --color-tint-amber-fg: #d98c1a;
+  --color-tint-slate-bg: #e8eaf5;
+  --color-tint-slate-fg: #3a4b7e;
+
+  /* Radius */
+  --radius-md: 0.625rem;
+  --radius-lg: 0.875rem;
+  --radius-xl: 1.125rem;
+
+  /* Shadows */
+  --shadow-xs: 0 1px 2px rgba(16, 24, 40, 0.04);
+  --shadow-sm: 0 2px 6px rgba(16, 24, 40, 0.05);
+  --shadow-md: 0 10px 24px rgba(16, 24, 40, 0.08);
+  --shadow-modal: 0 28px 64px rgba(16, 24, 40, 0.22);
+
+  /* Type scale (compact admin UI, consistent ratio) */
+  --text-2xs: 0.6875rem;
+  --text-2xs--line-height: 1.4;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.5;
+  --text-sm: 0.8125rem;
+  --text-sm--line-height: 1.55;
+  --text-base: 0.875rem;
+  --text-base--line-height: 1.6;
+  --text-md: 0.9375rem;
+  --text-md--line-height: 1.5;
+  --text-lg: 1.125rem;
+  --text-lg--line-height: 1.4;
+  --text-xl: 1.375rem;
+  --text-xl--line-height: 1.35;
+  --text-2xl: 1.75rem;
+  --text-2xl--line-height: 1.3;
+  --text-3xl: 2.125rem;
+  --text-3xl--line-height: 1.25;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--color-canvas);
+  color: var(--color-ink-700);
+  font-size: var(--text-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand-500);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--color-brand-100);
+}

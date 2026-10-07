@@ -1,0 +1,89 @@
+{
+  "breadcrumb": "TRUST / Data Governance / Asset Inventory",
+  "search": {
+    "label": "Employee email",
+    "placeholder": "Enter an employee email, e.g. name@company.com",
+    "button": "Search",
+    "demo": "Try a demo account:",
+    "notFound": "No employee found for {{email}} — check the address and try again",
+    "empty": {
+      "title": "Enter an email to start the inventory",
+      "body": "See the assets they own (to transfer the Owner) and the assets of others they can access (to revoke the permission)."
+    }
+  },
+  "status": { "resigned": "Resigned", "transferred": "Transferred", "active": "Active" },
+  "effective": {
+    "resigned": "Left on {{date}}",
+    "resignedFuture": "Leaving on {{date}}",
+    "transferred": "Moved to {{dept}} on {{date}}",
+    "transferredFuture": "Moving to {{dept}} on {{date}}",
+    "active": "Active"
+  },
+  "departments": { "ecommerce": "E-commerce Data", "risk": "Risk Platform", "finance": "Finance Data", "marketing": "Marketing Growth", "platform": "Data Platform", "customer": "Customer Data" },
+  "summary": { "owned": "Owned assets", "access": "Assets with access", "high": "High priority", "export": "Export list" },
+  "tabs": {
+    "owned": { "title": "Owned assets (Owner)", "desc": "They are the Owner — transfer these to a new owner" },
+    "access": { "title": "Assets with access", "desc": "They hold a permission but are not the Owner — revoke these" }
+  },
+  "types": { "all": "All", "table": "Tables", "task": "Tasks", "report": "Reports", "dataset": "Datasets", "metric": "Metrics" },
+  "columns": {
+    "name": "Asset", "type": "Type", "domain": "Domain", "levels": "Asset / Security tier", "status": "Status", "impact": "Impact",
+    "priority": "Handover priority", "updatedAt": "Last updated", "owner": "Owner", "permission": "Permission", "security": "Security tier",
+    "grantedAt": "Granted", "lastUsed": "Last used", "expires": "Expires", "holder": "Holder"
+  },
+  "runStatus": { "active": "Healthy", "stale": "Stale", "scheduled": "Scheduled", "paused": "Paused", "failed": "Failed", "published": "Published", "draft": "Draft" },
+  "impactUnit": { "table": "downstream", "task": "downstream tasks", "report": "subscribers", "dataset": "references", "metric": "references" },
+  "priority": { "high": "High", "medium": "Medium", "low": "Low" },
+  "permission": { "read": "Read", "write": "Read/Write", "admin": "Admin" },
+  "lastUsed": { "today": "Today", "daysAgo": "{{count}} days ago", "idle": "Idle" },
+  "expires": { "never": "Never" },
+  "actions": {
+    "transfer": "Transfer",
+    "transferSelected": "Transfer selected ({{count}})",
+    "revoke": "Revoke",
+    "revokeSelected": "Revoke selected ({{count}})"
+  },
+  "ownedEmpty": "No matching owned assets",
+  "accessEmpty": "No matching non-Owner permissions",
+  "priorityRule": "Handover priority: High = P3 core asset, impact ≥ 10, or a failed task; Medium = P2 asset, L2 or above, or scheduled; everything else is Low.",
+  "idleRule": "Idle: not used in the last {{days}} days — revoke these first.",
+  "transfer": {
+    "title": "Transfer assets",
+    "desc": "Transfer {{count}} assets owned by {{name}} to new Owners. Each asset can go to a different person.",
+    "bulkLabel": "Transfer all to",
+    "emailPlaceholder": "Recipient email",
+    "applyAll": "Apply to all",
+    "newOwner": "New Owner (email)",
+    "cancel": "Cancel",
+    "confirm": "Confirm transfer",
+    "incomplete": "Enter a valid recipient email for every asset",
+    "summary": "{{count}} assets will go to {{people}} people",
+    "note": "After the transfer the original employee is no longer the Owner. Downstream dependencies and other people's access are unchanged.",
+    "errors": {
+      "empty": "Enter the recipient's email",
+      "notFound": "No such employee",
+      "self": "Can't transfer to the current Owner",
+      "inactive": "This employee has left or is transferring and can't receive assets"
+    }
+  },
+  "revoke": {
+    "title": "Revoke access",
+    "desc": "Revoke {{name}}'s access to the following {{count}} assets",
+    "cancel": "Cancel",
+    "confirm": "Revoke access",
+    "note": "Takes effect immediately; they lose access right away and would need to request it again."
+  },
+  "notice": {
+    "transferred": "Transferred {{count}} assets",
+    "revoked": "Revoked {{count}} permissions",
+    "reset": "Demo data restored"
+  },
+  "log": {
+    "title": "Activity log",
+    "empty": "No activity yet",
+    "reset": "Restore demo data",
+    "kind": { "transfer": "Transfer", "revoke": "Revoke" },
+    "transferTo": "transferred to {{name}} ({{email}})",
+    "revoked": "revoked {{permission}} access"
+  }
+}

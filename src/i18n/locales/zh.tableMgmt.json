@@ -1,0 +1,266 @@
+{
+  "breadcrumb": "TRUST / 数据治理 / 数仓表管理",
+  "modes": {
+    "standard": "Standard 标准模式",
+    "ddl": "DDL 模式"
+  },
+  "modeHint": {
+    "standard": "逐项填写表名、描述与治理标签，系统实时校验数仓规范并生成建表 DDL",
+    "ddl": "粘贴建表 SQL，自动解析表结构并转入 Standard 模式补全治理元数据"
+  },
+  "actions": {
+    "reset": "清空重填",
+    "addColumn": "添加字段",
+    "removeColumn": "删除字段",
+    "suggestSecurity": "按字段名建议安全等级",
+    "copy": "复制",
+    "copied": "已复制",
+    "submit": "提交建表",
+    "again": "继续创建新表"
+  },
+  "sections": {
+    "basic": {
+      "title": "表名与描述",
+      "desc": "按数仓规范生成表名：分层_业务域_主题_周期"
+    },
+    "labels": {
+      "title": "治理标签",
+      "desc": "资产等级、安全等级、责任人与业务描述，是资产治理与访问审批的依据"
+    },
+    "columns": {
+      "title": "字段定义",
+      "desc": "为每个字段补充描述与安全等级；表安全等级将自动取字段中的最高等级"
+    }
+  },
+  "fields": {
+    "layer": "数据分层",
+    "domain": "业务域",
+    "subject": "主题名",
+    "period": "刷新周期",
+    "comment": "表描述",
+    "assetLevel": "资产等级",
+    "securityLevel": "表安全等级",
+    "owner": "责任人",
+    "businessDescription": "业务描述"
+  },
+  "placeholders": {
+    "select": "请选择",
+    "subject": "如 order、user_profile",
+    "comment": "一句话说明表的内容与粒度，如：订单明细表，一行一个订单",
+    "owner": "如 alex.chen@company.com",
+    "businessDescription": "说明表的业务背景、主要使用场景、数据来源与统计口径（至少 20 字）"
+  },
+  "hints": {
+    "subject": "小写字母、数字、下划线，≤ 32 字符",
+    "comment": "至少 6 个字",
+    "businessDescription": "已输入 {{count}} / 20 字"
+  },
+  "naming": {
+    "fullName": "完整表名",
+    "rule": "命名规则：{分层}_{业务域}_{主题}_{周期}，仅小写字母、数字与下划线，总长 ≤ 64。",
+    "tooLong": "表名超过 64 字符",
+    "invalid": "仅支持小写字母、数字与下划线，且以字母开头"
+  },
+  "layers": {
+    "ods": "贴源层",
+    "dwd": "明细层",
+    "dws": "汇总层",
+    "ads": "应用层",
+    "dim": "维度层"
+  },
+  "domains": {
+    "commerce": "电商交易",
+    "customer": "客户",
+    "finance": "财务",
+    "risk": "风控",
+    "marketing": "营销",
+    "supply": "供应链"
+  },
+  "periods": {
+    "di": "日增量",
+    "df": "日全量",
+    "hi": "小时增量",
+    "mi": "月增量",
+    "rt": "实时"
+  },
+  "asset": {
+    "P0": {
+      "name": "临时",
+      "desc": "个人或临时使用，无下游依赖"
+    },
+    "P1": {
+      "name": "一般",
+      "desc": "部门内部使用，下游依赖较少"
+    },
+    "P2": {
+      "name": "重要",
+      "desc": "跨部门使用，影响重要报表或指标"
+    },
+    "P3": {
+      "name": "核心",
+      "desc": "核心业务资产，变更需严格评审，必须有 Owner 与质量监控"
+    }
+  },
+  "security": {
+    "L0": {
+      "name": "公开",
+      "desc": "可对全公司公开，不含敏感信息"
+    },
+    "L1": {
+      "name": "内部",
+      "desc": "仅限公司内部员工访问"
+    },
+    "L2": {
+      "name": "保密",
+      "desc": "含敏感业务数据或个人信息，需审批后访问"
+    },
+    "L3": {
+      "name": "机密",
+      "desc": "含高度敏感数据（如证件号、账户信息），严格受限访问"
+    }
+  },
+  "levelHint": {
+    "auto": "由字段安全等级的最高级自动决定，无需手动选择",
+    "pending": "待字段标注安全等级后自动生成"
+  },
+  "columns": {
+    "name": "字段名",
+    "type": "类型",
+    "comment": "字段描述",
+    "security": "安全等级",
+    "pk": "主键",
+    "partition": "分区",
+    "nullable": "可空",
+    "empty": "尚未添加字段",
+    "namePlaceholder": "field_name",
+    "commentPlaceholder": "字段含义",
+    "invalidName": "命名不规范",
+    "duplicateName": "字段名重复",
+    "suggested": "已为 {{count}} 个字段填入建议等级",
+    "noSuggestion": "没有可建议的字段"
+  },
+  "checks": {
+    "title": "治理检查",
+    "summary": "{{passed}} / {{total}} 项通过",
+    "allPassed": "全部通过，可以提交建表",
+    "pending": "{{count}} 项待处理",
+    "items": {
+      "name": "表命名符合规范",
+      "domain": "已设置业务域",
+      "comment": "已填写表描述",
+      "businessDescription": "已填写业务描述",
+      "assetLevel": "已设置资产等级",
+      "owner": "已指定责任人",
+      "columns": "至少包含一个字段",
+      "columnNames": "字段命名规范且不重复",
+      "columnComments": "所有字段均有描述",
+      "columnSecurity": "所有字段均已标注安全等级"
+    }
+  },
+  "preview": {
+    "title": "DDL 预览",
+    "desc": "随表单实时生成，含治理标签与字段安全标签"
+  },
+  "submit": {
+    "failed": "还有 {{count}} 项检查未通过，请先补全",
+    "sandbox": "沙盒环境：提交后仅生成建表申请，不会实际执行 DDL"
+  },
+  "success": {
+    "title": "建表申请已提交",
+    "desc": "{{name}} 已通过全部治理检查并提交，申请编号 {{id}}。沙盒环境下未实际执行 DDL。",
+    "view": "查看申请明细",
+    "list": "返回申请列表"
+  },
+  "ddl": {
+    "title": "粘贴建表 SQL",
+    "desc": "支持 Delta / Hive 风格 CREATE TABLE：字段类型、NOT NULL、COMMENT、PRIMARY KEY、PARTITIONED BY 与表 COMMENT",
+    "placeholder": "CREATE TABLE dwd.dwd_commerce_order_di (\n  order_id BIGINT COMMENT '订单ID'\n) ...",
+    "sample": "载入示例",
+    "clear": "清空",
+    "parse": "解析并转为 Standard",
+    "errors": {
+      "empty": "请先输入建表 SQL",
+      "noCreate": "未找到 CREATE TABLE 语句",
+      "unbalanced": "字段定义的括号不匹配，请检查 SQL",
+      "noColumns": "未解析到任何字段"
+    },
+    "warnings": {
+      "nameNormalized": "原表名 {{raw}} 已按规范映射为 {{name}}",
+      "nameIncomplete": "原表名 {{raw}} 不符合命名规范，请在下方补全分层 / 业务域 / 主题 / 周期",
+      "noTableComment": "SQL 中没有表 COMMENT，请补充表描述",
+      "missingColumnComments": "{{count}} 个字段缺少 COMMENT，请补充字段描述"
+    },
+    "parsed": {
+      "title": "已从 DDL 解析 {{count}} 个字段",
+      "body": "表结构已导入。请继续补全资产等级、安全等级、业务域、责任人与业务描述。",
+      "dismiss": "知道了"
+    }
+  },
+  "status": {
+    "pending": "待审批",
+    "approved": "已通过",
+    "rejected": "已驳回",
+    "created": "已创建"
+  },
+  "modeShort": {
+    "standard": "Standard",
+    "ddl": "DDL"
+  },
+  "list": {
+    "create": "新建建表",
+    "searchPlaceholder": "搜索申请编号、表名、描述或申请人",
+    "allStatus": "全部",
+    "allModes": "全部模式",
+    "total": "共 {{count}} 条申请",
+    "empty": "没有符合条件的建表申请",
+    "emptyHint": "调整筛选条件，或新建一个建表申请",
+    "view": "查看明细",
+    "columns": {
+      "id": "申请编号",
+      "table": "表名",
+      "mode": "创建模式",
+      "domain": "业务域",
+      "levels": "资产 / 安全等级",
+      "status": "状态",
+      "creator": "申请人",
+      "createdAt": "创建时间"
+    }
+  },
+  "create": {
+    "title": "新建建表申请",
+    "breadcrumb": "TRUST / 数据治理 / 数仓表管理 / 新建"
+  },
+  "detail": {
+    "back": "返回列表",
+    "notFound": "未找到该建表申请",
+    "notFoundBody": "申请编号 {{id}} 不存在，可能已被清除。",
+    "columnCount": "共 {{count}} 个字段",
+    "sections": {
+      "summary": "申请信息",
+      "columns": "字段明细",
+      "progress": "审批进度",
+      "ddl": "建表 DDL"
+    },
+    "fields": {
+      "id": "申请编号",
+      "status": "状态",
+      "mode": "创建模式",
+      "creator": "申请人",
+      "createdAt": "创建时间",
+      "updatedAt": "最近更新",
+      "score": "治理得分",
+      "flags": "属性"
+    },
+    "progress": {
+      "submitted": "提交申请",
+      "review": "审批",
+      "waiting": "等待审批人处理",
+      "approvedBy": "{{name}} 审批通过",
+      "rejectedBy": "{{name}} 已驳回",
+      "create": "建表",
+      "created": "建表完成",
+      "pendingCreate": "审批通过后创建",
+      "notCreated": "未创建"
+    }
+  }
+}

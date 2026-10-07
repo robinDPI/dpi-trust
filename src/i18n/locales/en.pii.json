@@ -1,0 +1,107 @@
+{
+  "breadcrumb": "TRUST / Data Governance / PII Scan",
+  "untaggedLabel": "Untagged",
+  "search": "Search table, column or Owner",
+  "total": "{{count}} findings",
+  "flowNote": "AI suggestions only update a label after the Owner confirms on Lark",
+  "empty": "No matching findings",
+  "scan": {
+    "run": "Run scan",
+    "running": "Scanning…",
+    "last": "Last scan: {{time}}",
+    "step0": "Reading table and column metadata",
+    "step1": "Sampling column contents",
+    "step2": "AI sensitive-data detection",
+    "step3": "Comparing with current labels and building suggestions",
+    "done": { "found": "Scan complete — {{count}} new findings to review", "none": "Scan complete — nothing new found" }
+  },
+  "kpi": {
+    "scanned": "Scanned",
+    "scannedValue": "{{tables}} tables · {{columns}} columns",
+    "scannedSub": "{{count}} tables have no tags at all",
+    "open": "Open findings",
+    "openSub": "Mislabeled {{mislabeled}} · Untagged {{untagged}}",
+    "awaiting": "Awaiting Owner",
+    "awaitingSub": "Notified on Lark, waiting for confirmation",
+    "accuracy": "AI detection accuracy",
+    "accuracyDelta": "{{delta}} pts vs baseline",
+    "accuracySub": "From {{total}} Owner reviews · {{confirmed}} confirmed · {{rejected}} rejected"
+  },
+  "tabs": { "fields": "Column findings", "tables": "Table coverage" },
+  "issue": { "all": "All", "underrated": "Mislabeled · too low", "overrated": "Mislabeled · too high", "untagged": "Untagged" },
+  "issueHint": {
+    "underrated": "The current tier is lower than the AI's judgement; sensitive data may be under-protected.",
+    "overrated": "The current tier is higher than the AI's judgement; this may over-restrict legitimate use.",
+    "untagged": "This column has no security tier yet; the AI has suggested one."
+  },
+  "status": { "open": "Open", "awaiting": "Awaiting Owner", "confirmed": "Owner confirmed", "rejected": "Owner rejected", "updated": "Updated manually" },
+  "statusFilter": { "all": "All statuses", "open": "Open", "awaiting": "Awaiting Owner", "done": "Resolved" },
+  "states": {
+    "confirmed": "Updated to {{level}}",
+    "updated": "Manually set to {{level}}",
+    "rejected": "AI suggestion rejected; stays {{level}}"
+  },
+  "columns": { "field": "Column", "issue": "Issue", "level": "Current → AI suggestion", "category": "Type / confidence", "owner": "Owner", "status": "Status", "actions": "Actions" },
+  "categories": {
+    "idCard": "ID number", "bankAccount": "Bank account", "phone": "Phone number", "email": "Email", "address": "Address", "realName": "Personal name",
+    "ip": "IP address", "userId": "User identifier", "deviceInfo": "Device info", "amount": "Amount", "gender": "Gender", "general": "Not sensitive"
+  },
+  "evidence": { "title": "Why the AI thinks so", "sample": "Masked sample", "none": "No sensitive traits found in the name or contents" },
+  "actions": {
+    "notify": "Notify Owner",
+    "notifySelected": "Notify Owners ({{count}})",
+    "update": "Update label",
+    "confirm": "Confirm",
+    "reject": "Reject",
+    "demo": "Simulate Owner",
+    "demoTip": "Demo: simulate the Owner's reply on the Lark card"
+  },
+  "owner": { "cannotNotify": "The Owner has left or is transferring and can't receive Lark notices — transfer their assets in Asset Inventory first" },
+  "lark": {
+    "title": "Ask the Owner to confirm",
+    "desc": "AI suggestions are sent to the table Owner as a Lark card; the label only changes after they confirm",
+    "to": "To",
+    "cardTitle": "[TRUST] Sensitive data classification check",
+    "cardIntro": "The AI found {{count}} columns in {{table}} whose security tier needs confirming:",
+    "confirmBtn": "Confirm update",
+    "rejectBtn": "Disagree",
+    "skipped": "{{count}} columns skipped — their Owner can't receive Lark notices",
+    "skippedFields": "{{count}} columns",
+    "goTransfer": "Transfer in Asset Inventory →",
+    "send": "Send Lark notices ({{count}} messages)",
+    "cancel": "Cancel",
+    "feedbackNote": "Each confirmation or rejection is fed back to improve the AI; a higher confirmation rate means more accurate detection."
+  },
+  "label": {
+    "title": "Update label",
+    "desc": "Set the security tier for {{field}}",
+    "aiSuggests": "AI suggests: {{level}}",
+    "note": "A manual update takes effect immediately without Owner confirmation, and is recorded in the activity log.",
+    "confirm": "Update label",
+    "cancel": "Cancel"
+  },
+  "coverage": {
+    "table": "Table",
+    "state": { "title": "Tag status", "untagged": "Untagged", "partial": "Partly tagged", "complete": "Fully tagged" },
+    "tagged": "Columns tagged",
+    "currentTier": "Current table tier",
+    "aiTier": "AI-suggested table tier",
+    "owner": "Owner",
+    "open": "Open",
+    "view": "View columns",
+    "tierNote": "A table's tier is the highest tier among its columns."
+  },
+  "notice": {
+    "notified": "Sent Lark notices to {{owners}} Owners ({{count}} columns)",
+    "confirmed": "Owner confirmed — label updated to {{level}} and AI accuracy improved",
+    "rejected": "The Owner rejected the AI suggestion; recorded as feedback",
+    "updated": "Label updated to {{level}}",
+    "reset": "Demo data restored"
+  },
+  "log": {
+    "title": "Activity log",
+    "empty": "No activity yet",
+    "reset": "Restore demo data",
+    "kind": { "notified": "Notified", "confirmed": "Owner confirmed", "rejected": "Owner rejected", "updated": "Manual update" }
+  }
+}

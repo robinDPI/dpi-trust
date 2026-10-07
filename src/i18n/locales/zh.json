@@ -1,0 +1,266 @@
+{
+  "app": {
+    "name": "TRUST",
+    "caption": "Data Portal"
+  },
+  "topbar": {
+    "searchPlaceholder": "搜索资产、账号或模块",
+    "sandbox": "沙盒环境",
+    "roleLabel": "演示身份",
+    "docs": "文档",
+    "allModules": "全部模块"
+  },
+  "nav": {
+    "home": "门户首页",
+    "governance": "数据治理",
+    "analytics": "数据分析",
+    "ai": "AI 应用"
+  },
+  "home": {
+    "breadcrumb": "TRUST / 数据门户",
+    "title": "TRUST Data Portal",
+    "titleSub": "TRUST 数据门户",
+    "description": "TRUST 数据门户统一产品入口",
+    "refresh": "刷新",
+    "configureEntry": "配置入口"
+  },
+  "modulePage": {
+    "refresh": "刷新",
+    "configureEntry": "配置入口",
+    "footerEnv": "TRUST 数据门户 · 数据治理演示环境",
+    "synced": "已同步",
+    "revision": "版本",
+    "descriptions": {
+      "governance": "数据治理相关的安全、质量、资产与工具模块",
+      "analytics": "数据分析与可视化报表产品入口",
+      "ai": "AI 应用与 Agent 编排相关产品"
+    }
+  },
+  "moduleMenu": {
+    "subtitle": "全部模块 · 按分类浏览",
+    "footerHint": "点击模块直接进入"
+  },
+  "dashboard": {
+    "title": "数据治理概览",
+    "subtitle": "过去 7 天的关键治理指标",
+    "stats": {
+      "totalAssets": {
+        "label": "资产总数",
+        "delta": "+36 近7天"
+      },
+      "governedTables": {
+        "label": "已治理数据表",
+        "delta": "+12 近7天"
+      },
+      "pendingApprovals": {
+        "label": "待处理审批",
+        "status": "需要关注"
+      },
+      "piiCoverage": {
+        "label": "PII 字段分类覆盖率",
+        "delta": "+4% 近7天"
+      }
+    },
+    "health": {
+      "title": "治理健康度",
+      "status": "良好",
+      "description": "综合权限合规、PII 分类与审批时效计算"
+    },
+    "sensitivity": {
+      "title": "资产分级分布",
+      "tiers": {
+        "public": "公开",
+        "internal": "内部",
+        "confidential": "保密",
+        "pii": "PII"
+      }
+    },
+    "trend": {
+      "title": "治理操作趋势",
+      "subtitle": "审计事件数 · 近7天",
+      "days": [
+        "一",
+        "二",
+        "三",
+        "四",
+        "五",
+        "六",
+        "日"
+      ]
+    },
+    "catalog": {
+      "title": "治理指标目录",
+      "subtitle": "共 {{count}} 项指标 · 按 100 分制评分",
+      "searchPlaceholder": "搜索指标名称",
+      "noResults": "未找到匹配的指标",
+      "columns": {
+        "metric": "指标",
+        "description": "说明",
+        "score": "得分"
+      },
+      "categories": {
+        "security": "数据安全",
+        "quality": "数据质量",
+        "asset": "数据资产",
+        "process": "审批流程",
+        "compliance": "合规审计"
+      },
+      "metrics": {
+        "ownerCoverage": {
+          "name": "Owner 覆盖率",
+          "description": "已分配有效责任人的资产 / 资产总数"
+        },
+        "descriptionCompleteness": {
+          "name": "业务描述完整率",
+          "description": "已填写业务描述的资产 / 资产总数"
+        },
+        "fieldClassificationCoverage": {
+          "name": "字段分级覆盖率",
+          "description": "已标注安全等级的字段 / 字段总数"
+        },
+        "lineageCoverage": {
+          "name": "血缘覆盖率",
+          "description": "已建立上下游血缘的资产 / 资产总数"
+        },
+        "piiClassificationAccuracy": {
+          "name": "PII 分类准确率",
+          "description": "复核后分类正确的 PII 字段 / 已扫描 PII 字段"
+        },
+        "approvalSla": {
+          "name": "审批时效达标率",
+          "description": "4 小时内完成审批的申请 / 申请总数"
+        },
+        "leastPrivilegeCompliance": {
+          "name": "权限最小化合规率",
+          "description": "符合最小权限原则的授权 / 授权总数"
+        },
+        "sensitiveOwnerCoverage": {
+          "name": "高敏资产 Owner 覆盖率",
+          "description": "已分配责任人的保密/PII 资产 / 保密/PII 资产总数"
+        },
+        "qualityCheckPassRate": {
+          "name": "数据质量检测通过率",
+          "description": "通过质量规则检测的数据表 / 已配置规则的数据表"
+        },
+        "auditTrailCompleteness": {
+          "name": "审计留痕完整率",
+          "description": "操作留痕完整的敏感操作 / 敏感操作总数"
+        }
+      }
+    }
+  },
+  "categories": {
+    "governanceOverview": "治理总览",
+    "governanceOverviewItem": {
+      "name": "Governance Overview",
+      "tag": "治理总览",
+      "description": "资产总数、治理健康度与待处理事项一览"
+    },
+    "dataSecurity": "数据安全",
+    "dataQuality": "数据质量",
+    "dataAsset": "数据资产",
+    "dataTool": "数据工具"
+  },
+  "products": {
+    "datawind": {
+      "name": "Datawind",
+      "tag": "数据分析",
+      "description": "数据分析与可视化报表"
+    },
+    "dataQuery": {
+      "name": "Data Query",
+      "tag": "数据查询",
+      "description": "统一数据查询入口"
+    },
+    "purposeGate": {
+      "name": "Purpose Gate",
+      "tag": "AI 应用",
+      "description": "AI 应用与 Agent 编排"
+    },
+    "intelligentWorkspace": {
+      "name": "DPI-Intelligent Workspace",
+      "tag": "AI 应用",
+      "description": "DPI 智能工作空间"
+    },
+    "featureStore": {
+      "name": "Feature Store",
+      "tag": "指标管理",
+      "description": "指标管理统一入口"
+    }
+  },
+  "governanceModules": {
+    "accessCenter": {
+      "name": "Access Center",
+      "tag": "权限管理",
+      "description": "管理个人与组授权，按字段安全等级申请访问"
+    },
+    "s3AccessCenter": {
+      "name": "S3 Access Center",
+      "tag": "对象存储访问",
+      "description": "管理 Bucket、目录和对象的访问及临时链接"
+    },
+    "auditLog": {
+      "name": "Audit Log",
+      "tag": "操作审计",
+      "description": "查看跨模块操作结果与变更记录"
+    },
+    "piiScan": {
+      "name": "PII Scan",
+      "tag": "敏感数据扫描",
+      "description": "AI 扫描发现误标与未打标的敏感字段并给出分级建议，经 Owner 在 Lark 二次确认后更新标签"
+    },
+    "dqc": {
+      "name": "DQC",
+      "tag": "数据质量检测",
+      "description": "配置并运行数据质量检测规则，查看检测结果与异常记录"
+    },
+    "dataMap": {
+      "name": "Data Map",
+      "tag": "数据资产地图",
+      "description": "发现资产，查看字段、血缘、权限与活动"
+    },
+    "fileSheetIngestion": {
+      "name": "File & Sheet Ingestion",
+      "tag": "文件与在线文档同步",
+      "description": "上传结构化文件或定时同步 Lark Sheets，生成可治理的数仓表"
+    },
+    "tableManagement": {
+      "name": "Table Management",
+      "tag": "数仓表管理",
+      "description": "通过 Standard 表单或 DDL 创建带治理标签的 Databricks 表"
+    },
+    "realtimePlatform": {
+      "name": "Realtime Platform",
+      "tag": "实时开发平台",
+      "description": "使用 Flink SQL 开发、发布和管理实时数仓表"
+    },
+    "assetInventory": {
+      "name": "Asset Inventory",
+      "tag": "资产盘点",
+      "description": "按邮箱查询员工名下的资产与拥有权限的资产，支持资产转移与权限回收"
+    }
+  },
+  "command": {
+    "title": "TRUST 数据门户",
+    "subtitle": "数据治理 · 数据分析 · 数据查询 · AI 应用 · 指标管理",
+    "placeholder": "搜索模块、功能或关键词",
+    "hint": "输入模块名称、中文名称或功能关键词，例如\"权限\"\"PII\"\"实时\"。",
+    "currentPage": "当前页面",
+    "shortcuts": "全局搜索 · Esc 关闭",
+    "moduleCount": "{{count}} 个模块",
+    "noResults": "未找到匹配的模块"
+  },
+  "user": {
+    "name": "Alex Chen",
+    "role": "管理员"
+  },
+  "lang": {
+    "zh": "中",
+    "en": "EN"
+  },
+  "placeholder": {
+    "title": "功能设计中",
+    "body": "该模块的详细功能与交互正在设计，将在后续迭代中提供。",
+    "back": "返回{{nav}}"
+  }
+}

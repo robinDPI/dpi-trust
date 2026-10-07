@@ -1,0 +1,107 @@
+{
+  "breadcrumb": "TRUST / 数据治理 / 敏感数据扫描",
+  "untaggedLabel": "未打标",
+  "search": "搜索表、字段或 Owner",
+  "total": "共 {{count}} 项发现",
+  "flowNote": "AI 建议需 Owner 在 Lark 二次确认后才会更新标签",
+  "empty": "没有符合条件的发现",
+  "scan": {
+    "run": "发起扫描",
+    "running": "扫描中…",
+    "last": "上次扫描：{{time}}",
+    "step0": "读取表与字段元数据",
+    "step1": "采样字段内容",
+    "step2": "AI 敏感数据识别",
+    "step3": "对比现有标签并生成分级建议",
+    "done": { "found": "扫描完成，新发现 {{count}} 个待处理问题", "none": "扫描完成，未发现新增问题" }
+  },
+  "kpi": {
+    "scanned": "已扫描",
+    "scannedValue": "{{tables}} 张表 · {{columns}} 个字段",
+    "scannedSub": "其中 {{count}} 张表完全未打标",
+    "open": "待处理问题",
+    "openSub": "误标 {{mislabeled}} · 未打标 {{untagged}}",
+    "awaiting": "等待 Owner 确认",
+    "awaitingSub": "已通过 Lark 通知，等待二次确认",
+    "accuracy": "AI 识别准确率",
+    "accuracyDelta": "较基线 {{delta}} 个百分点",
+    "accuracySub": "基于 Owner 反馈 {{total}} 次 · 确认 {{confirmed}} · 驳回 {{rejected}}"
+  },
+  "tabs": { "fields": "字段发现", "tables": "表覆盖" },
+  "issue": { "all": "全部", "underrated": "误标 · 偏低", "overrated": "误标 · 偏高", "untagged": "未打标" },
+  "issueHint": {
+    "underrated": "当前等级低于 AI 判断，敏感数据可能被低估保护，存在泄露风险。",
+    "overrated": "当前等级高于 AI 判断，可能造成过度保护、影响正常使用。",
+    "untagged": "该字段还没有安全等级标签，AI 已给出分级建议。"
+  },
+  "status": { "open": "待处理", "awaiting": "等待 Owner", "confirmed": "Owner 已确认", "rejected": "Owner 已驳回", "updated": "已手动更新" },
+  "statusFilter": { "all": "全部状态", "open": "待处理", "awaiting": "等待 Owner", "done": "已处理" },
+  "states": {
+    "confirmed": "已更新为 {{level}}",
+    "updated": "已手动更新为 {{level}}",
+    "rejected": "AI 建议被驳回，保持 {{level}}"
+  },
+  "columns": { "field": "字段", "issue": "问题", "level": "当前 → AI 建议", "category": "敏感类型 / 置信度", "owner": "Owner", "status": "状态", "actions": "操作" },
+  "categories": {
+    "idCard": "证件号", "bankAccount": "银行账号", "phone": "手机号", "email": "邮箱", "address": "地址", "realName": "姓名",
+    "ip": "IP 地址", "userId": "用户标识", "deviceInfo": "设备信息", "amount": "金额", "gender": "性别", "general": "非敏感"
+  },
+  "evidence": { "title": "AI 判断依据", "sample": "脱敏样本", "none": "字段内容与命名未发现敏感特征" },
+  "actions": {
+    "notify": "通知 Owner",
+    "notifySelected": "通知 Owner（{{count}}）",
+    "update": "更新标签",
+    "confirm": "确认",
+    "reject": "驳回",
+    "demo": "模拟 Owner",
+    "demoTip": "演示：模拟 Owner 在 Lark 卡片中的回复"
+  },
+  "owner": { "cannotNotify": "Owner 已离职或转岗，无法接收 Lark 通知，请先在资产盘点中转移资产" },
+  "lark": {
+    "title": "通知 Owner 二次确认",
+    "desc": "AI 分级建议会通过 Lark 卡片发给表 Owner，Owner 确认后标签才会更新",
+    "to": "发送至",
+    "cardTitle": "【TRUST】敏感数据分级确认",
+    "cardIntro": "AI 在 {{table}} 中发现 {{count}} 个字段的安全等级需要确认：",
+    "confirmBtn": "确认更新",
+    "rejectBtn": "不认同",
+    "skipped": "{{count}} 个字段的 Owner 无法接收 Lark 通知，已跳过",
+    "skippedFields": "{{count}} 个字段",
+    "goTransfer": "去资产盘点转移 →",
+    "send": "发送 Lark 通知（{{count}} 条消息）",
+    "cancel": "取消",
+    "feedbackNote": "Owner 的每次确认或驳回都会作为反馈用于优化 AI 识别，确认率越高说明识别越准确。"
+  },
+  "label": {
+    "title": "更新标签",
+    "desc": "为 {{field}} 设置安全等级",
+    "aiSuggests": "AI 建议：{{level}}",
+    "note": "手动更新将直接生效，不经过 Owner 确认，并记入处理记录。",
+    "confirm": "更新标签",
+    "cancel": "取消"
+  },
+  "coverage": {
+    "table": "表",
+    "state": { "title": "打标状态", "untagged": "未打标", "partial": "部分未打标", "complete": "已打标" },
+    "tagged": "字段已打标",
+    "currentTier": "当前表等级",
+    "aiTier": "AI 建议表等级",
+    "owner": "Owner",
+    "open": "待处理",
+    "view": "查看字段",
+    "tierNote": "表等级取字段中的最高等级。"
+  },
+  "notice": {
+    "notified": "已向 {{owners}} 位 Owner 发送 Lark 通知（{{count}} 个字段）",
+    "confirmed": "Owner 已确认，标签更新为 {{level}}，AI 识别准确率已提升",
+    "rejected": "Owner 驳回了 AI 建议，已记录为反馈",
+    "updated": "标签已更新为 {{level}}",
+    "reset": "已还原演示数据"
+  },
+  "log": {
+    "title": "处理记录",
+    "empty": "暂无处理记录",
+    "reset": "还原演示数据",
+    "kind": { "notified": "已通知", "confirmed": "Owner 确认", "rejected": "Owner 驳回", "updated": "手动更新" }
+  }
+}

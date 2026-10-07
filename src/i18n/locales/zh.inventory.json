@@ -1,0 +1,89 @@
+{
+  "breadcrumb": "TRUST / 数据治理 / 资产盘点",
+  "search": {
+    "label": "员工邮箱",
+    "placeholder": "输入员工邮箱，如 name@company.com",
+    "button": "查询",
+    "demo": "演示数据可尝试：",
+    "notFound": "未找到邮箱为 {{email}} 的员工，请检查后重试",
+    "empty": {
+      "title": "输入员工邮箱开始盘点",
+      "body": "查询离职、转岗员工名下的资产（可转移 Owner）以及 ta 拥有访问权限的他人资产（可回收权限）。"
+    }
+  },
+  "status": { "resigned": "已离职", "transferred": "已转岗", "active": "在职" },
+  "effective": {
+    "resigned": "{{date}} 离职",
+    "resignedFuture": "{{date}} 离职（待生效）",
+    "transferred": "{{date}} 转岗至{{dept}}",
+    "transferredFuture": "{{date}} 转岗至{{dept}}（待生效）",
+    "active": "在职"
+  },
+  "departments": { "ecommerce": "电商数据组", "risk": "风控平台组", "finance": "财务数据组", "marketing": "营销增长组", "platform": "数据平台组", "customer": "客户数据组" },
+  "summary": { "owned": "名下资产", "access": "拥有权限的资产", "high": "高优先级", "export": "导出清单" },
+  "tabs": {
+    "owned": { "title": "名下资产（Owner）", "desc": "ta 是 Owner 的资产，需要转移给新的负责人" },
+    "access": { "title": "拥有权限的资产", "desc": "ta 被授予了访问权限但不是 Owner，需要回收权限" }
+  },
+  "types": { "all": "全部", "table": "数据表", "task": "调度任务", "report": "报表", "dataset": "数据集", "metric": "指标" },
+  "columns": {
+    "name": "资产", "type": "类型", "domain": "业务域", "levels": "资产 / 安全等级", "status": "状态", "impact": "影响范围",
+    "priority": "交接优先级", "updatedAt": "最近更新", "owner": "Owner", "permission": "权限", "security": "安全等级",
+    "grantedAt": "授权时间", "lastUsed": "最近使用", "expires": "到期", "holder": "持有人"
+  },
+  "runStatus": { "active": "正常", "stale": "久未更新", "scheduled": "调度中", "paused": "已暂停", "failed": "运行失败", "published": "已发布", "draft": "草稿" },
+  "impactUnit": { "table": "个下游", "task": "个下游任务", "report": "位订阅者", "dataset": "个引用", "metric": "个引用" },
+  "priority": { "high": "高", "medium": "中", "low": "低" },
+  "permission": { "read": "只读", "write": "读写", "admin": "管理" },
+  "lastUsed": { "today": "今天", "daysAgo": "{{count}} 天前", "idle": "闲置" },
+  "expires": { "never": "永久" },
+  "actions": {
+    "transfer": "转移",
+    "transferSelected": "批量转移（{{count}}）",
+    "revoke": "回收",
+    "revokeSelected": "批量回收（{{count}}）"
+  },
+  "ownedEmpty": "该员工名下没有符合条件的资产",
+  "accessEmpty": "该员工没有符合条件的非 Owner 权限",
+  "priorityRule": "交接优先级：高 = P3 核心资产、影响范围 ≥ 10 或运行失败的任务；中 = P2 资产、L2 及以上或调度中；其余为低。",
+  "idleRule": "闲置：最近 {{days}} 天未使用的授权，建议优先回收。",
+  "transfer": {
+    "title": "转移资产",
+    "desc": "将 {{name}} 名下的 {{count}} 项资产转移给新的 Owner，可为每项资产指定不同的接收人",
+    "bulkLabel": "统一转给",
+    "emailPlaceholder": "接收人邮箱",
+    "applyAll": "应用到全部",
+    "newOwner": "新 Owner（邮箱）",
+    "cancel": "取消",
+    "confirm": "确认转移",
+    "incomplete": "请为每项资产填写有效的接收人邮箱",
+    "summary": "{{count}} 项资产将转移给 {{people}} 位员工",
+    "note": "转移后原员工不再是这些资产的 Owner；下游依赖与其他人的访问权限保持不变。",
+    "errors": {
+      "empty": "请输入接收人邮箱",
+      "notFound": "未找到该员工",
+      "self": "不能转给当前 Owner 本人",
+      "inactive": "该员工已离职或转岗，不能接收资产"
+    }
+  },
+  "revoke": {
+    "title": "回收权限",
+    "desc": "将回收 {{name}} 对以下 {{count}} 项资产的访问权限",
+    "cancel": "取消",
+    "confirm": "确认回收",
+    "note": "回收后立即生效，对方将无法再访问这些资产；如需恢复需重新申请授权。"
+  },
+  "notice": {
+    "transferred": "已转移 {{count}} 项资产",
+    "revoked": "已回收 {{count}} 项权限",
+    "reset": "已还原演示数据"
+  },
+  "log": {
+    "title": "操作记录",
+    "empty": "暂无操作记录",
+    "reset": "还原演示数据",
+    "kind": { "transfer": "转移", "revoke": "回收" },
+    "transferTo": "转移给 {{name}}（{{email}}）",
+    "revoked": "回收{{permission}}权限"
+  }
+}

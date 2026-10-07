@@ -1,0 +1,268 @@
+{
+  "app": {
+    "name": "TRUST",
+    "caption": "Data Portal"
+  },
+  "topbar": {
+    "searchPlaceholder": "Search assets, accounts or modules",
+    "sandbox": "SANDBOX",
+    "roleLabel": "Viewing as",
+    "docs": "Docs",
+    "allModules": "All modules"
+  },
+  "nav": {
+    "home": "Portal Home",
+    "governance": "Data Governance",
+    "analytics": "Data Analytics",
+    "ai": "AI Apps"
+  },
+  "home": {
+    "breadcrumb": "TRUST / Data Portal",
+    "title": "TRUST Data Portal",
+    "titleSub": "TRUST 数据门户",
+    "description": "Unified entry point for the TRUST data portal",
+    "refresh": "Refresh",
+    "configureEntry": "Configure entries"
+  },
+  "modulePage": {
+    "refresh": "Refresh",
+    "configureEntry": "Configure entries",
+    "footerEnv": "TRUST Data Portal · Governance demo environment",
+    "synced": "Synced",
+    "revision": "Revision",
+    "descriptions": {
+      "governance": "Security, quality, asset and tooling modules for data governance",
+      "analytics": "Entry point for analytics and visual reporting products",
+      "ai": "AI applications and agent orchestration"
+    }
+  },
+  "moduleMenu": {
+    "subtitle": "All modules · Browse by category",
+    "footerHint": "Click a module to open it"
+  },
+  "dashboard": {
+    "title": "Governance Snapshot",
+    "subtitle": "Key governance metrics from the last 7 days",
+    "stats": {
+      "totalAssets": {
+        "label": "Total assets",
+        "delta": "+36 last 7 days"
+      },
+      "governedTables": {
+        "label": "Governed tables",
+        "delta": "+12 last 7 days"
+      },
+      "pendingApprovals": {
+        "label": "Pending approvals",
+        "status": "Needs attention"
+      },
+      "piiCoverage": {
+        "label": "PII fields classified",
+        "delta": "+4% last 7 days"
+      }
+    },
+    "health": {
+      "title": "Governance health",
+      "status": "Good",
+      "description": "Blends access compliance, PII classification and approval turnaround"
+    },
+    "sensitivity": {
+      "title": "Assets by sensitivity tier",
+      "tiers": {
+        "public": "Public",
+        "internal": "Internal",
+        "confidential": "Confidential",
+        "pii": "PII"
+      }
+    },
+    "trend": {
+      "title": "Governance activity trend",
+      "subtitle": "Audit events · last 7 days",
+      "days": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat",
+        "Sun"
+      ]
+    },
+    "catalog": {
+      "title": "Governance metrics catalog",
+      "subtitle": "{{count}} metrics · scored on a 100-point scale",
+      "searchPlaceholder": "Search metrics",
+      "noResults": "No matching metrics",
+      "columns": {
+        "metric": "Metric",
+        "description": "Description",
+        "score": "Score"
+      },
+      "categories": {
+        "security": "Data Security",
+        "quality": "Data Quality",
+        "asset": "Data Asset",
+        "process": "Approval Process",
+        "compliance": "Compliance & Audit"
+      },
+      "metrics": {
+        "ownerCoverage": {
+          "name": "Owner coverage",
+          "description": "Assets with a valid assigned owner / total assets"
+        },
+        "descriptionCompleteness": {
+          "name": "Description completeness",
+          "description": "Assets with a business description / total assets"
+        },
+        "fieldClassificationCoverage": {
+          "name": "Field classification coverage",
+          "description": "Fields tagged with a security tier / total fields"
+        },
+        "lineageCoverage": {
+          "name": "Lineage coverage",
+          "description": "Assets with upstream/downstream lineage / total assets"
+        },
+        "piiClassificationAccuracy": {
+          "name": "PII classification accuracy",
+          "description": "Reviewed PII fields correctly classified / scanned PII fields"
+        },
+        "approvalSla": {
+          "name": "Approval SLA compliance",
+          "description": "Requests approved within 4 hours / total requests"
+        },
+        "leastPrivilegeCompliance": {
+          "name": "Least-privilege compliance",
+          "description": "Grants following least-privilege / total grants"
+        },
+        "sensitiveOwnerCoverage": {
+          "name": "Sensitive asset owner coverage",
+          "description": "Confidential/PII assets with an owner / total confidential/PII assets"
+        },
+        "qualityCheckPassRate": {
+          "name": "Quality check pass rate",
+          "description": "Tables passing quality rules / tables with rules configured"
+        },
+        "auditTrailCompleteness": {
+          "name": "Audit trail completeness",
+          "description": "Sensitive actions with complete audit trail / total sensitive actions"
+        }
+      }
+    }
+  },
+  "categories": {
+    "governanceOverview": "Governance Overview",
+    "governanceOverviewItem": {
+      "name": "Governance Overview",
+      "tag": "Overview",
+      "description": "Asset totals, governance health and pending items at a glance"
+    },
+    "dataSecurity": "Data Security",
+    "dataQuality": "Data Quality",
+    "dataAsset": "Data Asset",
+    "dataTool": "Data Tool"
+  },
+  "products": {
+    "datawind": {
+      "name": "Datawind",
+      "tag": "Analytics",
+      "description": "Analytics & visual reporting"
+    },
+    "dataQuery": {
+      "name": "Data Query",
+      "tag": "Query",
+      "description": "Unified data query entry"
+    },
+    "purposeGate": {
+      "name": "Purpose Gate",
+      "tag": "AI Apps",
+      "description": "AI apps & agent orchestration"
+    },
+    "intelligentWorkspace": {
+      "name": "DPI-Intelligent Workspace",
+      "tag": "AI Apps",
+      "description": "DPI intelligent workspace"
+    },
+    "featureStore": {
+      "name": "Feature Store",
+      "tag": "Metrics",
+      "description": "Unified metrics management"
+    }
+  },
+  "governanceModules": {
+    "accessCenter": {
+      "name": "Access Center",
+      "tag": "Access management",
+      "description": "Manage personal and group access requests by field security tier"
+    },
+    "s3AccessCenter": {
+      "name": "S3 Access Center",
+      "tag": "Object storage access",
+      "description": "Manage access to buckets, prefixes and objects, incl. temporary links"
+    },
+    "auditLog": {
+      "name": "Audit Log",
+      "tag": "Audit trail",
+      "description": "Review cross-module actions and change history"
+    },
+    "piiScan": {
+      "name": "PII Scan",
+      "tag": "Sensitive data scan",
+      "description": "AI finds mislabeled and untagged sensitive columns and suggests tiers; labels update after the Owner confirms on Lark"
+    },
+    "dqc": {
+      "name": "DQC",
+      "tag": "Data quality check",
+      "description": "Configure and run data quality rules, review results and anomalies"
+    },
+    "dataMap": {
+      "name": "Data Map",
+      "tag": "Data asset map",
+      "description": "Discover assets and inspect fields, lineage, access and activity"
+    },
+    "fileSheetIngestion": {
+      "name": "File & Sheet Ingestion",
+      "tag": "File & sheet sync",
+      "description": "Upload structured files or sync Lark Sheets into governed warehouse tables"
+    },
+    "tableManagement": {
+      "name": "Table Management",
+      "tag": "Warehouse table management",
+      "description": "Create governed Databricks tables via standard forms or DDL"
+    },
+    "realtimePlatform": {
+      "name": "Realtime Platform",
+      "tag": "Realtime development",
+      "description": "Develop, publish and manage realtime warehouse tables with Flink SQL"
+    },
+    "assetInventory": {
+      "name": "Asset Inventory",
+      "tag": "Asset inventory",
+      "description": "Look up an employee by email — transfer the assets they own and revoke the access they hold"
+    }
+  },
+  "command": {
+    "title": "TRUST Data Portal",
+    "subtitle": "Governance · Analytics · Query · AI Apps · Metrics",
+    "placeholder": "Search modules, features or keywords",
+    "hint": "Try a module name or a keyword like \"access\", \"PII\" or \"realtime\".",
+    "currentPage": "Current page",
+    "shortcuts": "global search · Esc to close",
+    "moduleCount": "{{count}} modules",
+    "moduleCount_one": "{{count}} module",
+    "moduleCount_other": "{{count}} modules",
+    "noResults": "No matching modules"
+  },
+  "user": {
+    "name": "Alex Chen",
+    "role": "Admin"
+  },
+  "lang": {
+    "zh": "中",
+    "en": "EN"
+  },
+  "placeholder": {
+    "title": "Design in progress",
+    "body": "Detailed features and interactions for this module are being designed and will ship in a later iteration.",
+    "back": "Back to {{nav}}"
+  }
+}
